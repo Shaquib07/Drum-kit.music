@@ -43,7 +43,7 @@ footer {
 }
 
 .l {
-    background-image: url("images/snare.png"); 
+    background-image: url("images/snare.png");
 }
 
 .set {
@@ -62,6 +62,39 @@ footer {
 
 .red {
   color: red;
+}
+
+.input{
+  outline: none;
+  font-size: 2rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 100;
+  color: #DA0463;
+   text-shadow: 2px 0 #DBEDF3;
+  border-radius: 15px;
+  text-align: center;
+  margin: 10px;
+}
+
+#sequence{
+  width:250px;
+  height:30px;
+  font-size: 20px;
+  background-color: #FFF9D7;
+  font-weight: bold;
+}
+
+#btn1{
+  width: 70px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color:#FFC54D ;
+}
+
+#btn1:hover{
+    background-color:  #FF9F29;
 }
 
 .drum {
