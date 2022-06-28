@@ -1,29 +1,25 @@
-var num = document.querySelectorAll(".drum").length; //[     ]
+var num = document.querySelectorAll(".drum").length;
 var i = 0;
-
 while (i < num) {
   document.querySelectorAll(".drum")[i].addEventListener("click", onclick);
   i++;
 }
 
 function onclick() {
-  //console.log(event.target.value);
-
   soundPress(this.innerHTML);
   buttonAnimation(this.innerHTML);
-
 }
 
 //keypress using anonoymous function---
-
-document.addEventListener("keypress",function(event){
+// document.addEventListener("keypress",function(event){
 //  var ch=this.innerHTML;
-  soundPress(event.key);
-  buttonAnimation(event.key);
-});
+//   soundPress(event.key);
+//   buttonAnimation(event.key);
+// }
 
 function soundPress(key)
 {
+    console.log("key",key);
   switch (key)
   {
     case "w":
@@ -61,12 +57,11 @@ function soundPress(key)
       snare.play();
       break;
 
-      default: alert("please press relevant button");
+    //  default: //prompt("please press relevant button or input sequence key to play music");
   }
 }
 
 // adding animation to the buttons----
-
 function buttonAnimation(btn){
   var activeButton=document.querySelector("." + btn);
   activeButton.classList.add("pressed");
@@ -74,4 +69,19 @@ function buttonAnimation(btn){
   setTimeout(function(){
     activeButton.classList.remove("pressed")}
     ,100);
+}
+
+// input kit sequence from user ----
+  function userInput(event)
+  {
+    event.preventDefault();
+    var inp = document.getElementById('sequence').value;
+      var arrayinp=inp.split("");  // string to array
+      arrayinp.forEach((ch, i)=>  {  //ecmascript 6
+        setTimeout(function(){
+          console.log(ch);
+          soundPress(ch);
+        }
+           ,150*i);
+      });
 }
