@@ -17,11 +17,9 @@ function onclick() {
 //   buttonAnimation(event.key);
 // }
 
-function soundPress(key)
-{
-    console.log("key",key);
-  switch (key)
-  {
+function soundPress(key) {
+  console.log("key", key);
+  switch (key) {
     case "w":
       var tom1 = new Audio("sounds/tom-1.mp3");
       tom1.play();
@@ -57,31 +55,29 @@ function soundPress(key)
       snare.play();
       break;
 
-    //  default: //prompt("please press relevant button or input sequence key to play music");
+      //  default: //prompt("please press relevant button or input sequence key to play music");
   }
 }
 
 // adding animation to the buttons----
-function buttonAnimation(btn){
-  var activeButton=document.querySelector("." + btn);
+function buttonAnimation(btn) {
+  var activeButton = document.querySelector("." + btn);
   activeButton.classList.add("pressed");
 
-  setTimeout(function(){
-    activeButton.classList.remove("pressed")}
-    ,100);
+  setTimeout(function() {
+    activeButton.classList.remove("pressed")
+  }, 100);
 }
 
 // input kit sequence from user ----
-  function userInput(event)
-  {
-    event.preventDefault();
-    var inp = document.getElementById('sequence').value;
-      var arrayinp=inp.split("");  // string to array
-      arrayinp.forEach((ch, i)=>  {  //ecmascript 6
-        setTimeout(function(){
-          console.log(ch);
-          soundPress(ch);
-        }
-           ,150*i);
-      });
+function userInput(event) {
+  event.preventDefault();
+  var inp = document.getElementById('sequence').value;
+  var arrayinp = inp.split(""); // string to array
+  arrayinp.forEach((ch, i) => { //ecmascript 6
+    setTimeout(function() {
+      console.log(ch);
+      soundPress(ch);
+    }, 150 * i);
+  });
 }
